@@ -1,0 +1,233 @@
+:root {
+  --paper: #f3f2ec;
+  --ink: #1c2923;
+  --muted: #5c675f;
+  --green: #2c4a38;
+  --green-soft: #e6eee6;
+  --line: #d3d6ce;
+  --amber: #6b5424;
+  --amber-bg: #f6efe2;
+  --frame: #141a16;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: 16px; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+p, h1, figure { margin: 0; }
+
+button, a { font: inherit; color: inherit; }
+
+button { cursor: pointer; }
+
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  padding: 8px 12px;
+  background: #fff;
+}
+
+.skip:focus { top: 8px; }
+
+.page {
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+
+.top { margin-bottom: 18px; }
+
+.brand {
+  font: 600 13px/1.4 ui-monospace, SFMono-Regular, monospace;
+  letter-spacing: 0.08em;
+}
+
+.brand span {
+  margin-left: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.spine {
+  margin-top: 8px;
+  max-width: 40em;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.acts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.acts button {
+  min-height: 76px;
+  padding: 12px 14px;
+  text-align: left;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-bottom: 3px solid var(--line);
+}
+
+.acts button:hover { background: #e9efe8; }
+
+.acts button[aria-selected="true"] {
+  background: var(--green-soft);
+  border-color: var(--green);
+  border-bottom-color: var(--green);
+}
+
+.acts .num {
+  display: block;
+  font: 12px/1.4 ui-monospace, SFMono-Regular, monospace;
+  color: var(--muted);
+}
+
+.acts button[aria-selected="true"] .num { color: var(--green); }
+
+.acts .label {
+  display: block;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.stage { margin-top: 22px; }
+
+.stage-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--frame);
+  overflow: hidden;
+}
+
+.stage-frame img,
+.stage-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--frame);
+}
+
+.badge {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 12px;
+  margin: 0;
+  padding: 3px 8px;
+  background: var(--amber-bg);
+  color: var(--amber);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.decode-note {
+  position: absolute;
+  z-index: 2;
+  top: 48px;
+  left: 16px;
+  right: 16px;
+  width: min(460px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 12px 14px;
+  background: rgba(255, 248, 236, 0.96);
+  color: var(--amber);
+  font-size: 14px;
+  line-height: 1.5;
+  pointer-events: none;
+}
+
+.stage figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font: 13px/1.5 ui-monospace, SFMono-Regular, monospace;
+  overflow-wrap: anywhere;
+}
+
+.media-status {
+  margin-top: 10px;
+  color: var(--amber);
+  font-size: 14px;
+}
+
+.intro { margin-top: 22px; max-width: 42em; }
+
+.kicker {
+  font: 12px/1.4 ui-monospace, SFMono-Regular, monospace;
+  letter-spacing: 0.06em;
+  color: var(--green);
+}
+
+.intro h1 {
+  margin-top: 8px;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.intro #body {
+  margin-top: 12px;
+  color: var(--ink);
+}
+
+.placeholder {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: var(--amber-bg);
+  border-left: 3px solid #a6843d;
+  color: var(--amber);
+}
+
+.footnote {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footnote span {
+  margin-right: 8px;
+  font: 12px/1 ui-monospace, SFMono-Regular, monospace;
+  letter-spacing: 0.06em;
+  color: var(--green);
+}
+
+footer {
+  margin-top: 36px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #9a7433;
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .acts { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 520px) {
+  .page { width: min(1080px, calc(100% - 28px)); }
+  .acts { grid-template-columns: 1fr; }
+  .acts .label { font-size: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto; }
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="EDGE 四幕原型：大模型示教、端侧离线作业、回基地分析迭代、再次离线验证。">
+  <title>EDGE · 四幕</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#intro">跳到本幕介绍</a>
+  <main class="page">
+    <header class="top">
+      <p class="brand">EDGE <span>本地原型</span></p>
+      <p class="spine">云端大模型示教、改技能包 → 端侧离线作业 → 失败回传基地 → 再离线成功</p>
+    </header>
+    <nav id="act-nav" class="acts" role="tablist" aria-label="四幕"></nav>
+    <figure class="stage">
+      <div id="stage-frame" class="stage-frame"></div>
+      <figcaption id="stage-caption"></figcaption>
+    </figure>
+    <p id="media-status" class="media-status" hidden></p>
+    <section id="intro" class="intro" role="tabpanel" aria-live="polite">
+      <p id="kicker" class="kicker"></p>
+      <h1 id="title"></h1>
+      <p id="body"></p>
+      <p id="placeholder" class="placeholder" hidden></p>
+      <p id="footnote" class="footnote" hidden></p>
+    </section>
+    <noscript>
+      <p>点选切换需要 JavaScript。四幕依次是：大模型示教、端侧离线作业、回基地分析迭代、再次离线验证。</p>
+    </noscript>
+    <footer>
+      <p>2026-10-25 · 本地原型</p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
